@@ -35,6 +35,7 @@ public class wMenu extends javax.swing.JFrame {
         tecnicos = new javax.swing.JButton();
         instruments = new javax.swing.JButton();
         exit = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -45,24 +46,38 @@ public class wMenu extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Cambria", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Menú Principal");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, -1, 30));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, 30));
 
+        musician.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         musician.setText("Músicos");
         musician.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 musicianActionPerformed(evt);
             }
         });
-        jPanel1.add(musician, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 170, -1));
+        jPanel1.add(musician, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 250, -1));
 
+        admins.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         admins.setText("Personal Administrativo");
-        jPanel1.add(admins, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 170, -1));
+        admins.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminsActionPerformed(evt);
+            }
+        });
+        jPanel1.add(admins, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 250, -1));
 
+        tecnicos.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         tecnicos.setText("Personal Técnico");
-        jPanel1.add(tecnicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 170, -1));
+        tecnicos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tecnicosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(tecnicos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 250, -1));
 
+        instruments.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         instruments.setText("Instrumentos");
-        jPanel1.add(instruments, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 170, -1));
+        jPanel1.add(instruments, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 250, -1));
 
         exit.setText("SALIR");
         exit.addActionListener(new java.awt.event.ActionListener() {
@@ -70,9 +85,17 @@ public class wMenu extends javax.swing.JFrame {
                 exitActionPerformed(evt);
             }
         });
-        jPanel1.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
+        jPanel1.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 380));
+        jButton1.setText("Registrar Usuario");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -86,6 +109,23 @@ public class wMenu extends javax.swing.JFrame {
         music.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_musicianActionPerformed
+
+    private void adminsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminsActionPerformed
+        wAdmin admi = new wAdmin();
+        admi.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_adminsActionPerformed
+
+    private void tecnicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tecnicosActionPerformed
+        wTechnical techni = new wTechnical();
+        techni.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_tecnicosActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        wRegisterUser w8 = new wRegisterUser();
+        w8.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,6 +166,7 @@ public class wMenu extends javax.swing.JFrame {
     private javax.swing.JButton admins;
     private javax.swing.JButton exit;
     private javax.swing.JButton instruments;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton musician;

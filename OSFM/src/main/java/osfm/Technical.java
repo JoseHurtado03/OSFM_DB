@@ -1,3 +1,4 @@
+
 package osfm;
 
 import java.sql.ResultSet;
@@ -6,7 +7,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class Musician {
+public class Technical {
     private int dni;
     private String name;
     private String birth;
@@ -14,23 +15,8 @@ public class Musician {
     private String email;
     private String emailIns;
     private String tlf;
-    private String cargo;
     private String city;
     private String urbanization;
-    
-    /**
-     * @return the cargo
-     */
-    public String getCargo() {
-        return cargo;
-    }
-
-    /**
-     * @param cargo the cargo to set
-     */
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
-    }
 
     /**
      * @return the dni
@@ -158,7 +144,7 @@ public class Musician {
         this.urbanization = urbanization;
     }
     
-    public void showMusicians(JTable MusicianTable){
+    public void showTechnicals(JTable TechTable){
         ConnectionDB conex = new ConnectionDB();
         DefaultTableModel model = new DefaultTableModel();
         String sql = "";
@@ -169,14 +155,13 @@ public class Musician {
         model.addColumn("Correo_P");
         model.addColumn("Correo_Ins");
         model.addColumn("Tlf");
-        model.addColumn("Cargo");
         model.addColumn("Ciudad");
         model.addColumn("Urbanización");
         
-        MusicianTable.setModel(model);
-        sql = "SELECT * FROM \"OSFM\".musico";
+        TechTable.setModel(model);
+        sql = "SELECT * FROM \"OSFM\".tecnico";
         
-        String[] data = new String[10];
+        String[] data = new String[9];
         Statement st;
         try {
             st = conex.initConnection().createStatement();
@@ -191,10 +176,9 @@ public class Musician {
                 data[6] = rs.getString(7);
                 data[7] = rs.getString(8);
                 data[8] = rs.getString(9);
-                data[9] = rs.getString(10);
                 model.addRow(data);
             }
-            MusicianTable.setModel(model);
+            TechTable.setModel(model);
         } catch(Exception e){
             JOptionPane.showMessageDialog(null, "Error al realizar la consulta SQL");
         }

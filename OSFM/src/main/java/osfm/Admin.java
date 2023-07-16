@@ -1,3 +1,4 @@
+
 package osfm;
 
 import java.sql.ResultSet;
@@ -6,7 +7,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class Musician {
+public class Admin {
     private int dni;
     private String name;
     private String birth;
@@ -17,20 +18,6 @@ public class Musician {
     private String cargo;
     private String city;
     private String urbanization;
-    
-    /**
-     * @return the cargo
-     */
-    public String getCargo() {
-        return cargo;
-    }
-
-    /**
-     * @param cargo the cargo to set
-     */
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
-    }
 
     /**
      * @return the dni
@@ -131,6 +118,20 @@ public class Musician {
     }
 
     /**
+     * @return the cargo
+     */
+    public String getCargo() {
+        return cargo;
+    }
+
+    /**
+     * @param cargo the cargo to set
+     */
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
+    /**
      * @return the city
      */
     public String getCity() {
@@ -158,7 +159,7 @@ public class Musician {
         this.urbanization = urbanization;
     }
     
-    public void showMusicians(JTable MusicianTable){
+    public void showAdmins(JTable MusicianTable) {
         ConnectionDB conex = new ConnectionDB();
         DefaultTableModel model = new DefaultTableModel();
         String sql = "";
@@ -172,16 +173,16 @@ public class Musician {
         model.addColumn("Cargo");
         model.addColumn("Ciudad");
         model.addColumn("Urbanización");
-        
+
         MusicianTable.setModel(model);
-        sql = "SELECT * FROM \"OSFM\".musico";
-        
+        sql = "SELECT * FROM \"OSFM\".administrativo";
+
         String[] data = new String[10];
         Statement st;
         try {
             st = conex.initConnection().createStatement();
             ResultSet rs = st.executeQuery(sql);
-            while (rs.next()){
+            while (rs.next()) {
                 data[0] = rs.getString(1);
                 data[1] = rs.getString(2);
                 data[2] = rs.getString(3);
@@ -195,7 +196,7 @@ public class Musician {
                 model.addRow(data);
             }
             MusicianTable.setModel(model);
-        } catch(Exception e){
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al realizar la consulta SQL");
         }
     }

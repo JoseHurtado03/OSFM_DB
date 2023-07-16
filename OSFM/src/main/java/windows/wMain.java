@@ -68,11 +68,12 @@ public class wMain extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startActionPerformed
-        ConnectionDB conec = new ConnectionDB();
-        conec.initConnection();
-        wMenu w1 = new wMenu();
+//        ConnectionDB conec = new ConnectionDB();
+//        conec.initConnection();
+        wInit w1 = new wInit();
         w1.setVisible(true);
         this.setVisible(false);
+        
     }//GEN-LAST:event_startActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
