@@ -1,0 +1,96 @@
+****Tabla Músico****
+CREATE TABLE "OSFM".musico(
+    dni int UNIQUE NOT NULL,
+    Nombre varchar(45) NOT NULL,
+    Fecha_Nac date NOT NULL,
+	Fecha_Ingreso date,
+	correo_p varchar(25) NOT NULL,
+	correo_ins varchar(25),
+	tlf int,
+	cargo dom_cargo_m,
+	ciudad varchar(25) NOT NULL,
+	urb varchar(25)
+)
+
+ALTER TABLE "OSFM".musico
+ADD CONSTRAINT musico_pk PRIMARY KEY (dni)
+
+****Tabla Técnico****
+CREATE TABLE "OSFM".tecnico(
+    dni int UNIQUE NOT NULL,
+    Nombre varchar(45) NOT NULL,
+    Fecha_Nac date NOT NULL,
+	Fecha_Ingreso date,
+	correo_p varchar(25) NOT NULL,
+	correo_ins varchar(25),
+	tlf int,
+	ciudad varchar(25) NOT NULL,
+	urb varchar(25)
+);
+
+ALTER TABLE "OSFM".tecnico
+ADD CONSTRAINT tecnico_pk PRIMARY KEY (dni)
+
+
+****Tabla Administrativo****
+CREATE TABLE "OSFM".administrativo(
+    dni int UNIQUE NOT NULL,
+    Nombre varchar(45) NOT NULL,
+    Fecha_Nac date NOT NULL,
+	Fecha_Ingreso date,
+	correo_p varchar(25) NOT NULL,
+	correo_ins varchar(25),
+	tlf integer,
+	cargo dom_cargo_a,
+	ciudad varchar(25) NOT NULL,
+	urb varchar(25)
+);
+
+ALTER TABLE "OSFM".administrativo
+ADD CONSTRAINT admin_pk PRIMARY KEY (dni)
+
+****Tabla Instrumento****
+CREATE TABLE "OSFM".instrumento(
+    num_serial int UNIQUE NOT NULL,
+    tipo varchar(45) NOT NULL,
+    Marca varchar(20) NOT NULL,
+);
+
+ALTER TABLE "OSFM".instrumento
+ADD CONSTRAINT instrumento_pk PRIMARY KEY (num_serial)
+
+****Tabla Asignado****
+CREATE TABLE "OSFM".asignado(
+    CI_Musico int NOT NULL,
+    Serial_Instrumento int UNIQUE NOT NULL,
+    Fecha date NOT NULL,
+
+    CONSTRAINT asigna_pk PRIMARY KEY (CI_Musico),
+    CONSTRAINT musico_fk FOREIGN KEY (CI_Musico) REFERENCES "OSFM".musico(dni),
+    CONSTRAINT instrumento_fk FOREIGN KEY (Serial_Instrumento) REFERENCES "OSFM".instrumento(num_serial)
+)
+
+****DOMINIOS****
+
+CREATE DOMAIN Dom_Cargo_M AS VARCHAR NOT NULL
+    CHECK (VALUE IN ('Titular', 'Invitado'));
+
+CREATE DOMAIN Dom_Cargo_A AS VARCHAR NOT NULL
+    CHECK (VALUE IN ('Coordinador', 'Asistente', 'Supervisor', 'Secretario'));
+
+CREATE DOMAIN Dom_Tipo_Instrumento AS VARCHAR NOT NULL
+    CHECK (VALUE IN ('Violín', 'Viola', 'Violoncello', 'Contrabajo', 'Flauta', 'Oboe', 'Clarinete', 'Fagot', 'Trompeta', 'Trombón', 'Corno Francés', 'Tuba'));
+
+CREATE DOMAIN email_domain AS VARCHAR(255)
+CHECK (VALUE ~* '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$');
+
+CREATE DOMAIN dom_correo_ins AS VARCHAR(255)
+CHECK (VALUE ~* '^[A-Za-z0-9._%+-]+@elsistema\.org\.ve$');
+
+****INSERCIONES****
+
+INSERT INTO "OSFM".musico VALUES (29686758, 'José Hurtado', '23/07/2003', '16/02/2020', 'hvjosel03@gmail.com', 'jhutado@elsistema.org.ve', 04120117286, 'Titular', 'Guarenas', 'Terrazas del Este')
+
+UPDATE "OSFM".musico 
+SET correo_ins = 'jhurtado@elsistema.org.ve'
+WHERE dni = 29686758
