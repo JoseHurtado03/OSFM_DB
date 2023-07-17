@@ -1,5 +1,6 @@
 package osfm;
 
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
@@ -197,6 +198,42 @@ public class Musician {
             MusicianTable.setModel(model);
         } catch(Exception e){
             JOptionPane.showMessageDialog(null, "Error al realizar la consulta SQL");
+        }
+    }
+    
+    public void insertMusician(int dni, String name, String birth, String startDate, String email, String emailIns, String tlf, String cargo, String city, String urba){
+        this.setDni(dni);
+        this.setName(name);
+        this.setBirth(birth);
+        this.setStartDate(startDate);
+        this.setEmail(email);
+        this.setEmailIns(emailIns);
+        this.setTlf(tlf);
+        this.setCargo(cargo);
+        this.setCity(city);
+        this.setUrbanization(urba);
+        
+        ConnectionDB conex = new ConnectionDB();
+        String sql = "INSERT INTO \"OSFM\".musico (dni, nombre, fecha_nac, fecha_ingreso, correo_p, correo_ins, tlf, cargo, ciudad, urb) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        
+        try{
+            CallableStatement cs = conex.initConnection().prepareCall(sql);
+            cs.setInt(1, this.getDni());
+            cs.setString(2, this.getName());
+            cs.setString(3, this.getBirth());
+            cs.setString(4, this.getStartDate());
+            cs.setString(5, this.getEmail());
+            cs.setString(6, this.getEmailIns());
+            cs.setString(7, this.getTlf());
+            cs.setString(8, this.getCargo());
+            cs.setString(9, this.getCity());
+            cs.setString(10, this.getUrbanization());
+            cs.execute();
+            
+            JOptionPane.showMessageDialog(null, "Inserción exitosa");
+            
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(null, "ERROR, no se realizó la inserción");
         }
     }
 }
