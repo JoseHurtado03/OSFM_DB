@@ -25,12 +25,14 @@ windows\wMusician$3.class
 windows\wMusician$1.class
 osfm\User.class
 osfm\Admin.class
+windows\wTechnical$4.class
 osfm\ConnectionDB.class
 windows\wAdmin$2.class
 windows\wTechnical$2.class
 windows\wInit.class
 windows\wMain.class
 osfm\Function.class
+windows\wAdmin$4.class
 windows\wMain$2.class
 windows\wTechnical.class
 windows\wRegisterUser.class

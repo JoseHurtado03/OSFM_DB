@@ -36,29 +36,29 @@ public class wAdmin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        dni = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        name = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        birth = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        emailIns = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        tlf = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        cargo = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        city = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        urba = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        startDate = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
+        email = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        insert = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableAdmin = new javax.swing.JTable();
@@ -78,61 +78,61 @@ public class wAdmin extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Cédula");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 200, -1));
+        jPanel1.add(dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 200, -1));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Nombre");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 200, -1));
+        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 200, -1));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Fecha de Nacimiento");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 150, -1));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 110, -1));
+        jPanel1.add(birth, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 110, -1));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Correo Institucional");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, -1, -1));
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 100, 170, -1));
+        jPanel1.add(emailIns, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 100, 170, -1));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Teléfono");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 150, -1, -1));
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 240, -1));
+        jPanel1.add(tlf, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 240, -1));
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Cargo");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, -1, -1));
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 240, -1));
+        jPanel1.add(cargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 240, -1));
 
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Ciudad");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, -1));
-        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, 240, -1));
+        jPanel1.add(city, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, 240, -1));
 
         jLabel9.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Urbanización");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, -1, -1));
-        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 300, 210, -1));
+        jPanel1.add(urba, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 300, 210, -1));
 
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Fecha de Ingreso");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
-        jPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 130, -1));
+        jPanel1.add(startDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 130, -1));
 
         jLabel11.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Correo");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
-        jPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 200, -1));
+        jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 200, -1));
 
         jButton1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jButton1.setText("🔙");
@@ -156,9 +156,14 @@ public class wAdmin extends javax.swing.JFrame {
         });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 240, -1, -1));
 
-        jButton4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jButton4.setText("INSERTAR");
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 120, -1, -1));
+        insert.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        insert.setText("INSERTAR");
+        insert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                insertActionPerformed(evt);
+            }
+        });
+        jPanel1.add(insert, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 120, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista del Personal Administrativo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -193,6 +198,22 @@ public class wAdmin extends javax.swing.JFrame {
         w1.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void insertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertActionPerformed
+        Admin admin = new Admin();
+        admin.insertAdmin(Integer.parseInt(dni.getText()), name.getText(), birth.getText(), startDate.getText(), email.getText(), emailIns.getText(), tlf.getText(), cargo.getText(), city.getText(), urba.getText());
+        admin.showAdmins(tableAdmin);
+        dni.setText("");
+        name.setText("");
+        birth.setText("");
+        startDate.setText("");
+        email.setText("");
+        emailIns.setText("");
+        tlf.setText("");
+        cargo.setText("");
+        city.setText("");
+        urba.setText("");
+    }//GEN-LAST:event_insertActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,10 +252,16 @@ public class wAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField birth;
+    private javax.swing.JTextField cargo;
+    private javax.swing.JTextField city;
+    private javax.swing.JTextField dni;
+    private javax.swing.JTextField email;
+    private javax.swing.JTextField emailIns;
+    private javax.swing.JButton insert;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -249,16 +276,10 @@ public class wAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField name;
+    private javax.swing.JTextField startDate;
     private javax.swing.JTable tableAdmin;
+    private javax.swing.JTextField tlf;
+    private javax.swing.JTextField urba;
     // End of variables declaration//GEN-END:variables
 }

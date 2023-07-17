@@ -202,6 +202,16 @@ public class wMusician extends javax.swing.JFrame {
         Musician music = new Musician();
         music.insertMusician(Integer.parseInt(dni.getText()), name.getText(), birth.getText(), startDate.getText(), email.getText(), emailIns.getText(), tlf.getText(), cargo.getText(), city.getText(), urba.getText());
         music.showMusicians(tableMusicians);
+        dni.setText("");
+        name.setText("");
+        birth.setText("");
+        startDate.setText("");
+        email.setText("");
+        emailIns.setText("");
+        tlf.setText("");
+        cargo.setText("");
+        city.setText("");
+        urba.setText("");
     }//GEN-LAST:event_insertActionPerformed
 
     /**

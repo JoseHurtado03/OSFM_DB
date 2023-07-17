@@ -55,7 +55,7 @@ public class wRegisterUser extends javax.swing.JFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Contraseña;");
+        jLabel3.setText("Contraseña:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
         jPanel1.add(userName, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 180, -1));
 

@@ -168,7 +168,7 @@ public class Musician {
         ConnectionDB conex = new ConnectionDB();
         DefaultTableModel model = new DefaultTableModel();
         String sql = "";
-        model.addColumn("dni");
+        model.addColumn("Cédula");
         model.addColumn("Nombre");
         model.addColumn("Fecha_Nac");
         model.addColumn("Fecha_Ing");
