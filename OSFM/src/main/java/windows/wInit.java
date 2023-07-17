@@ -21,7 +21,7 @@ public class wInit extends javax.swing.JFrame {
     public wInit() {
         initComponents();
         this.setLocationRelativeTo(null);
-        User jl = new User("JoseHurtado", "clave");
+        User jl = new User("Jose", "1234");
         users = jl.usersData();
         users[0] = jl;
     }

@@ -1,8 +1,13 @@
 package osfm;
 
 import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -201,7 +206,7 @@ public class Musician {
         }
     }
     
-    public void insertMusician(int dni, String name, String birth, String startDate, String email, String emailIns, String tlf, String cargo, String city, String urba){
+    public void insertMusician(int dni, String name, String birth, String startDate, String email, String emailIns, String tlf, String cargo, String city, String urba) {
         this.setDni(dni);
         this.setName(name);
         this.setBirth(birth);
@@ -212,28 +217,31 @@ public class Musician {
         this.setCargo(cargo);
         this.setCity(city);
         this.setUrbanization(urba);
-        
+
         ConnectionDB conex = new ConnectionDB();
-        String sql = "INSERT INTO \"OSFM\".musico (dni, nombre, fecha_nac, fecha_ingreso, correo_p, correo_ins, tlf, cargo, ciudad, urb) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
-        
-        try{
-            CallableStatement cs = conex.initConnection().prepareCall(sql);
-            cs.setInt(1, this.getDni());
-            cs.setString(2, this.getName());
-            cs.setString(3, this.getBirth());
-            cs.setString(4, this.getStartDate());
-            cs.setString(5, this.getEmail());
-            cs.setString(6, this.getEmailIns());
-            cs.setString(7, this.getTlf());
-            cs.setString(8, this.getCargo());
-            cs.setString(9, this.getCity());
-            cs.setString(10, this.getUrbanization());
-            cs.execute();
-            
+        String sql = "INSERT INTO \"OSFM\".musico (dni, nombre, fecha_nac, fecha_ingreso, correo_p, correo_ins, tlf, cargo, ciudad, urb) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        Function func = new Function();
+        try ( Connection connection = conex.initConnection();  PreparedStatement statement = connection.prepareStatement(sql)) {
+
+            statement.setInt(1, this.getDni());
+            statement.setString(2, this.getName());
+            statement.setDate(3, func.convertToDate(this.getBirth()));
+            statement.setDate(4, func.convertToDate(this.getStartDate()));
+            statement.setString(5, this.getEmail());
+            statement.setString(6, this.getEmailIns());
+            statement.setString(7, this.getTlf());
+            statement.setString(8, this.getCargo());
+            statement.setString(9, this.getCity());
+            statement.setString(10, this.getUrbanization());
+
+            statement.executeUpdate();
+
             JOptionPane.showMessageDialog(null, "Inserción exitosa");
-            
-        } catch (Exception e){
-            JOptionPane.showMessageDialog(null, "ERROR, no se realizó la inserción");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "ERROR: No se pudo realizar la inserción: " + e.toString());
+            e.printStackTrace();
         }
     }
 }
